@@ -1,27 +1,47 @@
-var todo = prompt("choisir un action:");
-var name = prompt("choose a name");
-var arr=[];
+var arr=["ali", "jamila"];
 var newArr=[];
 
 
 //****************Fonctions*************
 //add fonction:
-function addName(name){
+function addName(){
     let newarr=arr.push(name);
     console.log(arr);
 }
 //remove fonction:
-function removeName(name){
-    let newArr = arr.pop(name);
-    console.log(newArr);
+function removeName(){
+    var index = arr.indexOf(name);
+    arr.splice(index,1);
+    console.log(arr);
 }
 //display fonction:
-
+function display(){
+    console.log(arr)
+}
 //quit fonction
 
 //********************* Fonction choice*/
+
+var name = prompt("choose a name:");
+var todo = "empty";
+todo = prompt("choisir un action:");
+
+while(todo!=="quit"){
+
 if(todo==="add"){
-    addName(name);
+    addName()
+}else if(todo==="remove"){
+    removeName()
+}else if(todo==="display"){
+    display()
 }else{
-    removeName(name);
+    alert("We will quit, your choice is invalable!")
+    todo="quit"
 }
+todo= "quit";
+
+
+}
+
+alert("thank you for using our app, refresh the page to do it again :D !")
+
